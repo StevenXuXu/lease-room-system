@@ -14,6 +14,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 */
 public interface ViewAppointmentMapper extends BaseMapper<ViewAppointment> {
 
+    IPage<AppointmentVo> getPageByAppointmentQueryVo(IPage<AppointmentVo> page, AppointmentQueryVo queryVo);
 }
 
 
