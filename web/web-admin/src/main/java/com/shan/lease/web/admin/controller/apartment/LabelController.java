@@ -33,13 +33,14 @@ public class LabelController {
     @Operation(summary = "新增或修改标签信息")
     @PostMapping("saveOrUpdate")
     public Result saveOrUpdateLabel(@RequestBody LabelInfo labelInfo) {
-
+        labelInfoService.saveOrUpdate(labelInfo);
         return Result.ok();
     }
 
     @Operation(summary = "根据id删除标签信息")
     @DeleteMapping("deleteById")
     public Result deleteLabelById(@RequestParam Long id) {
+        labelInfoService.removeById(id);
         return Result.ok();
     }
 }
