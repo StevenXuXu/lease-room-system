@@ -22,7 +22,7 @@ public class JwtUtil {
     public static String createToken(Long userId, String username) {
 
         String jwt = Jwts.builder()
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24 * 365L))
                 .setSubject("LOGIN_USER")
                 .claim("userId", userId)
                 .claim("username", username)
